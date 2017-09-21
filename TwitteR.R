@@ -12,7 +12,7 @@ setup_twitter_oauth("Consumer Key",
                     "Access Token", 
                     "Access Token secret")
 
-# selecciona las últimas 1000 publicaciones de 'adidasCO'
+# selecciona las últimas 3200 publicaciones de 'adidasCO'
 timeline <- userTimeline("adidasCO", n=3200)
 
 # extrae la información relevante de las publicaciones
@@ -23,26 +23,24 @@ head(timelined)
 # obtiene los estadísticos de resumen para el
 # número de favoritos que recibió cada tweet
 summary(timelined$favoriteCount)
-
 # desviación estándar
 sd(timelined$favoriteCount)
 
 # obtiene los estadísticos de resumen para el
-# número de favoritos que recibió cada tweet
+# número de retweets que recibió cada tweet
 summary(timelined$retweetCount)
-
 # desviación estándar
 sd(timelined$retweetCount)
 
 # establece como directorio de trabajo el Escritorio
-# para leer o añadir archivos
+# para leer o añadir archivos (modificar el nombre
+# de usuario)
 setwd("C:/Users/personal/Desktop")
 
 # guarda la información en el archivo "adidasCO.csv"
 write.csv2(timelined , "adidasCO.csv")
 
-
-
+# Comparación
 timeline2 <- userTimeline("tennis_venus", n=3200)
 timeline2d <- twListToDF(timeline2)
 
