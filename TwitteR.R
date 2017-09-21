@@ -1,4 +1,4 @@
-# installa el paquete twitteR junto a sus dependencias
+# instala el paquete twitteR junto a sus dependencias
 # (ejecutar solo si no se tiene el paquete instalado)
 install.packages("twitteR")
 
